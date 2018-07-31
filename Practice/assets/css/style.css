@@ -1,0 +1,32 @@
+/* General */
+body {
+  background-color: lightgray;
+  height: auto;
+  width: auto;
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-size: cover;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.frame {
+  color: white;
+  border: 1px solid white;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+h1 {
+  color: white;
+}
+
+footer {
+  position: relative;
+  border: 1px solid white;
+}

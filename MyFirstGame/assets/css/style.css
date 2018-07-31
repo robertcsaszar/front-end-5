@@ -1,0 +1,353 @@
+
+
+/* General */
+body {
+  background-image: url("https://uploads.codesandbox.io/uploads/user/bd3a92c7-8509-4979-85d5-a3e1afc43de1/sx7k-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  width: auto;
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-size: cover;
+  }
+}
+
+h1 {
+  color: white;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  color: white;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Monster */
+#monster {
+  margin-top: 510px;
+}
+
+@media (max-width: 800px) {
+  #monster {
+    display: none;
+  }
+}
+
+#monster-info {
+  margin-top: 8%;
+  height: auto;
+  width: auto;
+  background-color: black;
+  opacity: 0.8;
+  border: 1px solid white;
+  box-shadow: 10px 10px 5px black;
+}
+
+@media (max-width: 800px) {
+  #monster-info {
+    display: none;
+  }
+}
+
+#monster-info p {
+  color: white;
+  margin: 30px 0 0 10px;
+}
+
+#monster-info .stats {
+  margin: 0 0 20px 10px;
+}
+
+/* Monster Drop List */
+
+#drop-list {
+  background-color: black;
+  opacity: 0.6;
+  border: 1px solid white;
+}
+
+#drop {
+  height: auto;
+  width: auto;
+  background-color: black;
+  opacity: 0.9;
+  border: 1px solid white;
+  box-shadow: 10px 10px 5px black;
+  margin-top: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  #drop {
+    margin-top: 20px;
+  }
+}
+
+.slot {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  width: 53px;
+  height: 53px;
+  background-color: #8f5d38;
+  display: fixed;
+  background: url("https://res.cloudinary.com/treborx555/image/upload/v1472064620/gui_xyicsn.png");
+  background-size: 53px;
+  background-repeat: no-repeat;
+}
+
+/* Character */
+
+.character {
+  height: auto;
+  width: 100%;
+}
+
+#ba td {
+  width: 100%;
+}
+
+#char {
+  margin-top: 550px;
+}
+
+@media (max-width: 800px) {
+  #char {
+    margin: 0;
+  }
+}
+
+.stats {
+  text-align: center;
+  margin: 1px;
+}
+
+#character-items {
+  margin-top: 80%;
+  height: auto;
+  width: auto;
+  background-color: black;
+  opacity: 0.9;
+  border: 1px solid white;
+  box-shadow: -10px 10px 5px black;
+}
+
+@media (max-width: 800px) {
+  #character-items {
+    display: none;
+  }
+}
+
+hr {
+  background-color: white;
+}
+
+#character-items p {
+  color: white;
+}
+
+.characterslot {
+  display: block;
+/*   margin-left: 5px; */
+  margin: 0 auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  width: 53px;
+  height: 53px;
+  background-color: #8f5d38;
+  background: url("https://res.cloudinary.com/treborx555/image/upload/v1472064620/gui_xyicsn.png");
+  background-size: 53px;
+  background-repeat: no-repeat;
+}
+
+table td {
+  margin: 2px;
+}
+
+.totalplayerhpbar {
+  transition: 0.5s ease-in-out;
+  width: 100%;
+  height: 40px;
+  background-color: red;
+}
+
+/* Attack box */
+
+.title {
+  width: auto;
+  background-color: black;
+  opacity: 0.9;
+  border: 1px solid white;
+  box-shadow: 5px 10px 5px black;
+  padding: 5px;
+}
+
+.upinfo {
+  overflow-y: auto;
+  height: 300px;
+  width: auto;
+  background-color: black;
+  opacity: 0.7;
+  border: 1px solid white;
+  box-shadow: 5px 10px 5px black;
+}
+
+.downinfo {
+  overflow-y: auto;
+  height: 300px;
+  width: auto;
+  background-color: black;
+  opacity: 0.7;
+  border: 1px solid white;
+  box-shadow: 5px 10px 5px black;
+}
+
+#fight {
+  margin-top: 5%;
+}
+
+/* Sperll Bar & Hp Bar */
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  display: inline-block;
+}
+
+footer > div > div > button {
+  background-color: transparent;
+  padding: 0;
+  border: 3px solid black;
+  margin-top: 15px;
+  box-shadow: 7px 7px 20px black;
+}
+
+footer .progress {
+  margin: 5px 5px 5px 5px;
+  border: 1px solid black;
+}
+
+footer .hp {
+  background-color: red;
+}
+
+footer p {
+  text-align: left;
+  margin-left: 5px;
+}
+
+@media (max-width: 800px) {
+  footer {
+    margin: 0 auto;
+    position: initial;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  footer {
+    margin: 10px 0 0 0;
+    position: initial;
+    width: 100%;
+  }
+}
+
+#yourHealth, #compHealth {
+	width: inherit;
+  height: inherit;
+  background-color: white;
+  transition: width 0.25s cubic-bezier(.08,.91,.08,.93);
+  transform: translate3d(0,0,0);
+}
+
+#yourHealthBar, #compHealthBar {
+	display: block;
+  width: inherit;
+  height: 15px;
+  margin-top: 15px;
+  background-color: red;
+}
+
+#yourMana {
+	width: inherit;
+  height: inherit;
+  background-color: white;
+  transition: width 0.25s cubic-bezier(.08,.91,.08,.93);
+  transform: translate3d(0,0,0);
+}
+
+#yourManaBar {
+	display: block;
+  width: inherit;
+  height: 15px;
+  margin-top: 15px;
+  background-color: #3399ff;
+}
+
+button:hover {
+  border: 2px white solid;
+}
+
+#skill1 {
+  background-image: url("http://wow.zamimg.com/images/wow/icons/large/inv_weapon_shortblade_62.jpg");
+  width: 60px;
+  height: 60px;
+}
+
+#skill2 {
+  background-image: url("http://wow.zamimg.com/images/wow/icons/large/ability_rogue_bloodsplatter.jpg");
+  width: 60px;
+  height: 60px;
+}
+
+#skill3 {
+  background-image: url("http://wow.zamimg.com/images/wow/icons/large/ability_rogue_fanofknives.jpg");
+  width: 60px;
+  height: 60px;
+}
+#skill4 {
+  background-image: url("http://wow.zamimg.com/images/wow/icons/large/ability_racial_avatar.jpg");
+  width: 60px;
+  height: 60px;
+}
+#skill5 {
+  background-image: url("http://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg");
+  width: 60px;
+  height: 60px;
+}
+#skill6 {
+  background-image: url("http://wow.zamimg.com/images/wow/icons/large/inv_alchemy_70_red.jpg");
+  width: 60px;
+  height: 60px;
+}
+#skill7 {
+  background-image: url("http://wow.zamimg.com/images/wow/icons/large/inv_alchemy_70_blue.jpg");
+  width: 60px;
+  height: 60px;
+}
+
+a {
+  border: 0;
+}
+
+/* Audi */
+#mannoroth {
+  display: none;
+}

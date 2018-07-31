@@ -1,0 +1,209 @@
+<html>
+
+<head>
+	<title>BattleZone</title>
+	<meta charset="UTF-8" />
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap v4 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	 crossorigin="anonymous">
+	 <!-- Bootstrap Scripts -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous"></script>
+	 <!-- Custom Style -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- Game Scripts -->
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/character.js"></script>
+  <script src="assets/js/monster.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/items.js"></script>
+  <script src="assets/js/inventory.js"></script>
+  <script src="assets/js/leveling.js"></script>
+  <script src="assets/js/battle.js"></script>
+  <script src="assets/js/spells.js"></script>
+  
+   
+</head>
+
+<body onload="load(), battle()">
+  
+	<article class="container-fluid">
+		<div class="row">
+			<section class="col-sm-12 col-md-2">
+				<div id="char" class="mr-auto">
+					<img src="assets/images/characters/Main_character.png" class="img-fluid" alt="">
+				</div>
+			</section>
+
+			<section class="col-sm-12 col-md-2">
+				<div id="character-items">
+					<h4 class="p-2">Character Items</h4>
+          <hr>
+					<div class="row">
+						<div class="col-sm-3 col-md-3">
+							<table class="character">
+								<tr>
+									<td id="head" class="characterslot slot1"></td>
+									<td id="amulet" class="characterslot slot1"></td>
+									<td id="shoulder" class="characterslot slot1"></td>
+									<td id="back" class="characterslot slot1"></td>
+									<td id="chest" class="characterslot slot1"></td>
+									<td id="shirt" class="characterslot slot1"></td>
+									<td id="tabard" class="characterslot slot1"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<img id="portret" class="img-fluid" src="assets/images/characters/Main_character.png" alt="">
+							<hr>
+							<div class="row">
+								<div class="col-md-12">
+									<p id="hp"></p>
+									<p id="mana"></p>
+									<p id="attack"></p>
+									<p id="defense"></p>
+									<p id="xp"></p>
+									<p id="level"></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-md-3">
+							<table class="character">
+								<tr id="ba">
+									<td id="bracelet" class="characterslot slot1"></td>
+									<td id="gloves" class="characterslot slot1"></td>
+									<td id="belt" class="characterslot slot1"></td>
+									<td id="pants" class="characterslot slot1"></td>
+									<td id="boots" class="characterslot slot1"></td>
+									<td id="ring" class="characterslot slot1"></td>
+									<td id="trinket" class="characterslot slot1"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+          <div id="inventory"></div>
+			</section>
+
+			<section class="col-sm-12 col-md-4">
+				<div id="fight">
+					<center>
+						<h4 class="title">Monster Attack</h4>
+						<div class="upinfo"></div>
+					</center>
+					<center><img id="vs" src="https://vignette.wikia.nocookie.net/deathbattle/images/6/64/Vs.png/revision/latest?cb=20150618231458" width="150px;" alt=""></center>
+					<center>
+						<h4 class="title">Character Attack</h4>
+						<div class="downinfo mb-4"></div>
+					</center>
+				</div>
+			</section>
+
+			<section class="col-sm-12 col-md-2">
+				<div id="drop">
+					<h4 class="p-2">Drop Items</h4>
+          <hr>
+					<div class="test mb-4">
+						<center>
+							<table class="inventory">
+								<tr id="inventory2">
+									<td id="slot1" class="slot "></td>
+									<td id="slot2" class="slot "></td>
+									<td id="slot3" class="slot "></td>
+									<td id="slot4" class="slot "></td>
+								</tr>
+								<tr>
+									<td id="slot5" class="slot "></td>
+									<td id="slot6" class="slot "></td>
+									<td id="slot7" class="slot "></td>
+									<td id="slot8" class="slot "></td>
+								</tr>
+								<tr>
+									<td id="slot9" class="slot "></td>
+									<td id="slot10" class="slot "></td>
+									<td id="slot11" class="slot "></td>
+									<td id="slot12" class="slot "></td>
+								</tr>
+								<tr>
+									<td id="slot13" class="slot "></td>
+									<td id="slot14" class="slot "></td>
+									<td id="slot15" class="slot "></td>
+									<td id="slot16" class="slot "></td>
+								</tr>
+							</table>
+						</center>
+					</div>
+				</div>
+
+        <center><button id="reset" type="button" class="btn btn-info mt-4">Reset</button></center>
+        <center><button id="save" onclick=save() type="button" class="btn btn-warning mt-4">Save</button></center>
+
+				<div id="monster-info">
+					<h4 class="p-2">Monster Info</h4>
+          <hr>
+					<div class="row">
+						<div class="col-md-6">
+              <p id="monsterattack"></p>
+              <p id="monsterdefense"></p>
+              <p id="monsterxp"></p>
+              <p id="monsterlevel"></p>
+              <p id="monsterxp"></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="col-sm-12 col-md-2">
+				<div id="monster" class="mr-auto">
+					<img src="assets/images/monsters/bosses/lich_king.png" class="img-fluid" alt="">
+				</div>
+			</section>
+
+		</div>
+	</article>
+	<footer class="footer-bottom">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 center-block">
+				<p id="charName"></p>
+				<div id="yourHealth" min="0"><div id="yourHealthBar"></div></div>
+        <div id="yourMana"><div id="yourManaBar"></div></div>
+			</div>
+			<div id="spellbar" class="col-sm-4 col-md-4 center-block mb-2">
+				<button id="skill1" title="Basic Attack"></button>
+				<button id="skill2" title="Rupture"></button>
+				<button id="skill3" title="Knives"></button>
+				<button id="skill4" title="Avatar"></button>
+				<button id="skill5" title="Enrage"></button>
+				<button id="skill6" title="HP Potion"></button>
+				<button id="skill7" title="Mana Potion"></button>
+			</div>
+			<div class="col-sm-4 col-md-4 center-block">
+				<div id="compHealth"><div id="compHealthBar"></div></div>
+			</div>
+		</div>
+	</footer>
+    
+<script>
+  $(document).ready(function(){
+    $('#skill1').popover({title: "Baisc Attack", content: "+5 Damage", trigger: "hover", placement: "top"});
+    $('#skill2').popover({title: "Rupture", content: "+10 Damage", trigger: "hover", placement: "top"});
+    $('#skill3').popover({title: "Knives", content: "+15 Damage", trigger: "hover", placement: "top"});
+    $('#skill4').popover({title: "Avatar", content: "+10 Defense", trigger: "hover", placement: "top"});
+    $('#skill5').popover({title: "Enrage", content: "+20 Damage", trigger: "hover", placement: "top"});
+    $('#skill6').popover({title: "HP Potion", content: "+50 HP", trigger: "hover", placement: "top"});
+    $('#skill7').popover({title: "MP Potion", content: "+25 HP", trigger: "hover", placement: "top"});
+  });
+</script>  
+
+<!-- Audio -->
+<audio id="mannoroth" controls autoplay>
+  <source src="assets/sound/mannoroth.mp3" type="audio/mpeg">
+</audio>    
+ 
+</body>
+
+</html>
