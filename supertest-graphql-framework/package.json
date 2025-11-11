@@ -1,0 +1,96 @@
+{
+  "name": "supertest-graphql-framework",
+  "version": "1.0.0",
+  "description": "Modular SuperTest framework for GraphQL API testing with PKCE/IDP authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:parallel": "jest --maxWorkers=4",
+    "test:smoke": "jest --testPathPattern=smoke --maxWorkers=4",
+    "test:integration": "jest --testPathPattern=integration --maxWorkers=2",
+    "test:e2e": "jest --testPathPattern=e2e --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "report": "allure generate ./reports/allure-results --clean -o ./reports/allure-report && allure open ./reports/allure-report"
+  },
+  "keywords": [
+    "supertest",
+    "graphql",
+    "api-testing",
+    "pkce",
+    "oauth2",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "supertest": "^6.3.3",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.1",
+    "crypto-js": "^4.2.0",
+    "qs": "^6.11.2"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2",
+    "jest-junit": "^16.0.0",
+    "allure-jest": "^2.15.2",
+    "allure-commandline": "^2.25.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "winston": "^3.11.0",
+    "chalk": "^4.1.2",
+    "csv-parse": "^5.5.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js",
+      "**/tests/**/*.spec.js"
+    ],
+    "testTimeout": 60000,
+    "verbose": true,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js",
+      "!src/**/*.spec.js"
+    ],
+    "coverageDirectory": "./reports/coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporter",
+        {
+          "pageTitle": "GraphQL API Test Report",
+          "outputPath": "./reports/test-report.html",
+          "includeFailureMsg": true,
+          "includeConsoleLog": true,
+          "theme": "darkTheme"
+        }
+      ],
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "./reports",
+          "outputName": "junit.xml"
+        }
+      ]
+    ],
+    "setupFilesAfterEnv": [
+      "./src/config/jest.setup.js"
+    ],
+    "globalSetup": "./src/config/global.setup.js",
+    "globalTeardown": "./src/config/global.teardown.js"
+  }
+}
